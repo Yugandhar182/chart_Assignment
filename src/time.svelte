@@ -52,8 +52,8 @@
                 lineStyle: { width: 0 },
                 title: "Placements"
             },
-            width: '1390px',
-            height: '400px',
+            width: '1090px',
+            height: '350px',
             series: [
                 {
                     type: 'Column',
@@ -84,31 +84,34 @@
                 {
                     name: 'splineAxis',
                     opposedPosition: true,
-                    title: 'Total time to fill days',
-                    grid: {
-                        visible: true
-                    },
+                    title: 'Total time to fill days'
                 }
             ],
             title: 'Time to fill',
             tooltip: {
-                enable: true,
-                shared: true,
-            
-           
-               border: {
-                width: 2,
-                color: 'grey'
-            }
-             
-            },
+    enable: true,
+    shared: true,
+    format: ' ${series.name} :${point.y}',
+    fill: 'white', // Change the background color of the tooltip
+    textStyle: {
+        color: 'black', // Change the text (content) color of the tooltip
+        fontWeight:"bold",
+     
+       
+    },
+    border: {
+        width: 4, // Set the border width
+        color: 'whitesmoke' // Set the border color
+    }
+},
             legendSettings: {
         visible: true,
         //Legend position as top
         position:'Bottom'
-        }
+        },
         });
 
+    
         chart.appendTo('#container2');
     }
 </script>
@@ -118,12 +121,7 @@
 </div>
 <style>
     .Container1{
-        background-color:white;
-        width: 1400px;
-	    height: 420px;
-        margin-left:40px;
-        margin-top: 80px;
-        border: 4px solid rgb(234, 234, 245);
+ 
+        margin-top: 70px;
     }
-
 </style>
